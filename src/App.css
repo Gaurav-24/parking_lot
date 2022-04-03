@@ -1,38 +1,118 @@
-.App {
+*, *::after, *::before {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.parking-container {
+  padding: 1rem;
+}
+
+.parking-input-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0.75rem;
+}
+
+.registration-number-container label {
+  padding: 1em 0;
+}
+
+.registration-number-container .registration-number-input {
+  height: 1.5rem;
+  padding: 0.5em 0.75em;
+  margin-left: 1em;
+  width: 15vw;
+}
+
+.car-color-selector {
+  width: 20vw;
+}
+
+.park-car-btn {
+  padding: 1em;
+  border-radius: 10px;
+  border: 5px solid teal;
+  background-color: inherit;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.park-car-btn:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.park-car-btn:disabled {
+  cursor: no-drop;
+}
+
+.parking-lot-container {
+  --color-red: #AE030E;
+  --color-silver: #DFDFDF;
+  --color-white: #FFF;
+  --color-black: #000;
+  --color-grey: grey;
+  display: flex;
+  justify-content: center;
+
+}
+
+.parking-lot {
+  width: 60vw;
+  overflow-x: hidden;
+  min-height: 1000px;
+  border: 1px solid black;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1px;
+}
+
+.parking-spot {
+  height: 100px;
+  display: inline-flex;
+  justify-content: space-around;
+  align-items: center;
+
+}
+
+.parking-spot:nth-child(2n+1) {
+  border-right: 1px solid black;
+}
+
+.parking-spot:nth-child(n):not(:nth-last-of-type(2)):not(:nth-last-of-type(1)) {
+  border-bottom: 2px dashed black;
+}
+
+.parking-spot .car {
+  padding: 1rem;
+}
+
+.registration-number {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.car__body.red {
+  background-color: var(--color-red);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.car__body.silver {
+  background-color: var(--color-silver);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.car__body.black {
+  background-color: var(--color-black);
+}
+
+.car__body.grey {
+  background-color: var(--color-grey);
+}
+
+.parking-reports-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.parking-reports-container button {
+  padding: 0.5em;
+  margin: 0 0.5em;
 }

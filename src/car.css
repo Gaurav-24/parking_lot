@@ -1,0 +1,29 @@
+.car {}
+
+.car__body {
+    width: 120px;
+    height: 50px;
+    border: 3px solid black;
+    border-radius: 10px;
+    position: relative;
+}
+
+.car__body::after, .car__body::before {
+    content: "";
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0);
+    position: absolute;
+    z-index: 10;
+}
+
+.car__body::after {
+    top: 36px;
+    left: 70px;
+}
+
+.car__body::before {
+    top: 36px;
+    left: 20px;
+}
